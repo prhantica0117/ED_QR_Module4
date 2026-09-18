@@ -4,12 +4,19 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import AppButton from '@/components/AppButton';
 import { COLORS } from '@/constants/colors';
+<<<<<<< HEAD
 //import { STUDENT_ID } from '@/constants/student';
 import { useAuth } from '@/lib/auth';
 import { registerAttendance } from '@/lib/database';
 
 export default function ScanScreen() {
   const { user } = useAuth();
+=======
+import { STUDENT_ID } from '@/constants/student';
+import { registerAttendance } from '@/lib/database';
+
+export default function ScanScreen() {
+>>>>>>> b8b8a22b08f76aefce93eb012151e8e85e961465
   const [permission, requestPermission] = useCameraPermissions();
   const [scanned, setScanned] = useState(false);
   const [lastData, setLastData] = useState<string | null>(null);
@@ -40,9 +47,13 @@ export default function ScanScreen() {
   const handleBarcodeScanned = ({ data }: { data: string }) => {
     setScanned(true);
     setLastData(data);
+<<<<<<< HEAD
     //registerAttendance(data, STUDENT_ID).then((result) => {
     const studentId = user?.id ?? 'unknown';
     registerAttendance(data, studentId).then((result) => {
+=======
+    registerAttendance(data, STUDENT_ID).then((result) => {
+>>>>>>> b8b8a22b08f76aefce93eb012151e8e85e961465
       setMessage(result.message);
       setSuccess(result.success);
     });

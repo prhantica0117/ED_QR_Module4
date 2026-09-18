@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useState } from 'react';
 import { StyleSheet, Text, View, Alert } from 'react-native';
 import { useRouter } from 'expo-router';
@@ -43,11 +44,24 @@ export default function ProfileScreen() {
         onPress={handleSignOut}
         disabled={loading}
       />
+=======
+import { StyleSheet, Text, View } from 'react-native';
+import { COLORS } from '@/constants/colors';
+
+export default function ProfileScreen() {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>My Profile</Text>
+      <Text style={styles.subtitle}>
+        Profile management will be available in a future phase.
+      </Text>
+>>>>>>> b8b8a22b08f76aefce93eb012151e8e85e961465
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+<<<<<<< HEAD
   container: {
     flex: 1,
     backgroundColor: COLORS.background,
@@ -82,4 +96,9 @@ const styles = StyleSheet.create({
     fontSize: 11,
     color: COLORS.textSecondary,
   },
+=======
+  container: { flex: 1, backgroundColor: COLORS.background, justifyContent: 'center', alignItems: 'center', paddingHorizontal: 40 },
+  title: { fontSize: 20, fontWeight: '600', color: COLORS.textPrimary, marginBottom: 8 },
+  subtitle: { fontSize: 14, color: COLORS.textSecondary, textAlign: 'center', lineHeight: 20 },
+>>>>>>> b8b8a22b08f76aefce93eb012151e8e85e961465
 });
